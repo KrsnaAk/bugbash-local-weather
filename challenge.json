@@ -1,0 +1,7 @@
+{
+  "id": "local-weather",
+  "title": "Local Weather",
+  "difficulty": "starter",
+  "starterOnly": true,
+  "privateTestsExcluded": true
+}
