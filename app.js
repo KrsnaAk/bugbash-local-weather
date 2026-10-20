@@ -30,3 +30,8 @@ function render() {
   };
 }
 render();
+
+
+// Added organizer feature: recent-city memory for the current session.
+const recentCities = [];
+function rememberCity(value) { if (cities[value] && !recentCities.includes(value)) recentCities.unshift(value); return recentCities.slice(0, 3); }
