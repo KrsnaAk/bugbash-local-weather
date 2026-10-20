@@ -35,3 +35,19 @@ render();
 // Added organizer feature: recent-city memory for the current session.
 const recentCities = [];
 function rememberCity(value) { if (cities[value] && !recentCities.includes(value)) recentCities.unshift(value); return recentCities.slice(0, 3); }
+
+
+// Weather expansion: recent searches and deterministic forecast status.
+(() => {
+  const baseRender = render; const recent = []; let status = "ready";
+  const enhance = () => {
+    if (document.querySelector("#weather-tools")) return;
+    const panel = document.createElement("section"); panel.id = "weather-tools"; panel.className = "item";
+    panel.innerHTML = '<strong>Forecast tools</strong><button id="remember-city" type="button">Remember city</button><p id="weather-summary" class="muted small"></p>';
+    document.querySelector("#app")?.append(panel);
+    panel.querySelector("#remember-city").onclick = () => { if (city.trim()) recent.unshift(city); panel.querySelector("#weather-summary").textContent = status + " · " + recent.slice(0, 3).join(", "); };
+    panel.querySelector("#weather-summary").textContent = status + " · no recent searches";
+  };
+  render = () => { baseRender(); enhance(); };
+  enhance();
+})();
