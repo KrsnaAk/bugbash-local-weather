@@ -20,6 +20,10 @@ This challenge contains four independently verified fixes. The organizer dashboa
 
 This starter is intentionally framework-neutral so it can be kept small and reliable during the event. Install the dependencies documented by the organizer for the published repository, then use the supplied application entry point and visible checks.
 
+## Weather lookup
+
+Enter an OpenWeatherMap API key in the app to search for current weather by city. The key is saved in this browser's local storage and is not sent anywhere except OpenWeatherMap. Weather results include an embedded OpenStreetMap view and a link to open the location directly on the map. Since this is a browser-only demo, the API key is visible to the browser and should not be used as a production secret.
+
 ## Submission details
 
 Record the challenge ID `local-weather`, your verified GitHub username, branch, and exact 40-character commit SHA. Submit before the configured deadline (21 October 2026, 4:00 PM Asia/Kolkata). Review the event-wide participant instructions for resubmission and tie-break rules.
